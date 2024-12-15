@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Cucumber Suite" parallel="tests" thread-count="1">
+    <test name="Cucumber Tests">
+        <classes>
+            <!-- Correctly reference the class with its fully qualified name -->
+            <class name="runners.TestRunner2"/>  <!-- Replace 'runners' with your actual package name -->
+        </classes>
+    </test>
+</suite>
