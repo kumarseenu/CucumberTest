@@ -23,7 +23,7 @@ public class LoginStepDataTables {
 
     @Given("I have the following login credentials")
     public void userOnLoginPage(DataTable dataTable) {
-//        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");    
         driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
 
