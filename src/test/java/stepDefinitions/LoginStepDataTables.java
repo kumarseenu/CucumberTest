@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
+import org.openqa.selenium.chrome.ChromeDriver
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class LoginStepDataTables {
     @Given("I have the following login credentials")
     public void userOnLoginPage(DataTable dataTable) {
 //        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        driver = new SafariDriver();
+        driver = new ChromeDriver()();
         driver.get("https://practicetestautomation.com/practice-test-login/");
 
         // Convert the DataTable into a List of Maps
