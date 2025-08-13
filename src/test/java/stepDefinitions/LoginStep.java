@@ -12,7 +12,7 @@ public class LoginStep {
 
     @Given("the user is on the login page")
     public void userOnLoginPage() {
-//        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
     }
