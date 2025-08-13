@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepScenarioOutline {
     WebDriver driver;
@@ -15,7 +16,7 @@ public class LoginStepScenarioOutline {
     @Given("I navigate to the login page")
     public void userOnLoginPage() {
 //        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        driver = new SafariDriver();
+        driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
     }
 
