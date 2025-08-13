@@ -24,7 +24,7 @@ public class LoginStepDataTables {
     @Given("I have the following login credentials")
     public void userOnLoginPage(DataTable dataTable) {
 //        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        driver = new ChromeDriver()();
+        driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
 
         // Convert the DataTable into a List of Maps
