@@ -9,14 +9,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class LoginStepScenarioOutline {
     WebDriver driver;
 
     @Given("I navigate to the login page")
     public void userOnLoginPage() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new"); // Use headless mode (for Chrome 109+ use --headless=new)
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+// Generate a unique user-data-dir for each session
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.get("https://practicetestautomation.com/practice-test-login/");
     }
 
