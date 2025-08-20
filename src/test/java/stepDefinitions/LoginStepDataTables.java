@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
 import java.util.Map;
@@ -23,8 +24,15 @@ public class LoginStepDataTables {
 
     @Given("I have the following login credentials")
     public void userOnLoginPage(DataTable dataTable) {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new"); // Use headless mode (for Chrome 109+ use --headless=new)
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+// Generate a unique user-data-dir for each session
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
+
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");    
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.get("https://practicetestautomation.com/practice-test-login/");
 
         // Convert the DataTable into a List of Maps
